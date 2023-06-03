@@ -1,9 +1,9 @@
 :root {
-    --text-colour: white;
+    --text-color: white;
     --text-size: 2rem;
 }
 
-/* Link colour when it's clicked, default is red which isn't that nice.
+/* Link color when it's clicked, default is red which isn't that nice.
 Most browsers should support this, but it's minor anyway */
 :focus {
     color: #3a5a8a;
@@ -11,16 +11,15 @@ Most browsers should support this, but it's minor anyway */
 
 /* Use "a" selector instead of ":link" because then we can override it */
 a {
-    color: orange;
+    color: white;
+    text-decoration-thickness: 3px;
 }
 
 * {
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-
     font-family: "Work Sans", sans-serif;
-    
     scroll-behavior: smooth;
     scrollbar-color:#35353f #191922; /* Not supported by all browsers but it's minor anyway */
 }
@@ -29,9 +28,16 @@ a {
     width: 100%;
 }
 
-.flexCentre {
-    display: flex;
+.rightPadding {
+    padding-right: 1rem;
+}
 
+.halfWidth {
+    width: 50%;
+}
+
+.flexCenter {
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -45,7 +51,7 @@ a {
 
 /*======== Text ========*/
 b, p, td, th, h1, h2, h3, h4, h5, h6 {
-    color: var(--text-colour);
+    color: var(--text-color);
     font-size: var(--text-size);
 }
 
@@ -67,11 +73,10 @@ html {
     animation: gradientShift 100s ease infinite;
 }
 
-
 /*======== nav bar ========*/
 nav {
     background-color: #191922;
-    
+    border-radius: 15px;
     position: fixed;
     padding: 1.25rem;
 }
@@ -82,7 +87,7 @@ nav ul {
 }
 
 nav a {
-    color: var(--text-colour);
+    color: var(--text-color);
     
     /* Some browsers don't support this, use a border instead */
     /*text-decoration-thickness: 2px;*/
@@ -96,9 +101,18 @@ nav a:hover {
     border-bottom: solid #480CA8 3px;
 }
 
+.TopHeight {
+    padding-top: 15px;
+}
+
 /*======== header ========*/
 header {
-    min-height: 60%;
+    min-height: 55%;
+    background-image: url("./Images/SpawnBG.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    width: 100%;
 }
 
 /*======== main/sections ========*/
@@ -144,14 +158,13 @@ main {
     gap: 1rem;
     flex-grow: 1;
     padding: 1rem;
-    
     border: solid white 3px;
     background-color: #191922;
+    border-radius: 10px;
 }
 
 .contributor img {
     border-radius: 50%;
-    
     width: 7rem;
     height: 7rem;
 }
@@ -167,9 +180,20 @@ main {
 .contributor .profile b {
     width: 100%;
     margin-bottom: 1.25rem;
-    
     font-size: 2.25rem;
     border-bottom: solid #35353f 2px;
+}
+
+.block {
+    display: block;
+}
+
+main {
+    padding-top: 3rem;
+}
+
+.flex {
+    display: flex;
 }
 
 .contributor .profile b span {
@@ -185,13 +209,14 @@ main {
 footer {
     /* Maintain gap between ".section"s, footer isn't part of the same flex object as them */
     margin-top: 3rem;
-    
     padding: 2.5rem;
     background-color: #191922;
+    border-radius: 15px;
+    padding-bottom: 20px;
 }
 
 footer * {
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 #footerContent {
